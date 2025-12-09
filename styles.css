@@ -1,0 +1,176 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: #fff;
+    color: #000;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+main {
+    max-width: 600px;
+    text-align: left;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+}
+
+.tagline {
+    font-size: 1.25rem;
+    color: #333;
+    margin-bottom: 0.75rem;
+}
+
+.description {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+.location {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 2.5rem;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.nav-link {
+    position: relative;
+    text-decoration: none;
+    color: #000;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding-bottom: 4px;
+    cursor: pointer;
+}
+
+.nav-link span {
+    position: relative;
+    display: inline-block;
+}
+
+.nav-link span::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background: #000;
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.nav-link:hover span::after {
+    animation: highlight-pulse 0.4s ease-in-out infinite alternate;
+}
+
+@keyframes highlight-pulse {
+    0% {
+        background: #000;
+        height: 2px;
+        bottom: -2px;
+    }
+    100% {
+        background: #000;
+        height: 100%;
+        bottom: -2px;
+        opacity: 0.15;
+    }
+}
+
+.nav-link:hover span {
+    animation: text-flicker 0.3s ease-in-out infinite alternate;
+}
+
+@keyframes text-flicker {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.7;
+    }
+}
+
+/* Active/clicked state */
+.nav-link:active span::after {
+    background: #333;
+}
+
+/* Back link */
+.back-link {
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+/* About page */
+.about-content {
+    margin-bottom: 3rem;
+}
+
+.about-content .description {
+    margin-bottom: 1.5rem;
+}
+
+/* Work page */
+.work-content {
+    margin-bottom: 3rem;
+}
+
+.work-item {
+    margin-bottom: 2rem;
+}
+
+.work-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+/* Contact page */
+.contact-content {
+    margin-bottom: 3rem;
+}
+
+.contact-links {
+    margin-top: 1.5rem;
+}
+
+/* Bottom navigation */
+.bottom-nav {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    .tagline {
+        font-size: 1.1rem;
+    }
+
+    nav {
+        gap: 1.5rem;
+    }
+}
