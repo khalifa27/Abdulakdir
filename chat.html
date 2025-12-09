@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with AI - Abdulkadir Khalifa Mustapha</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="chat-page">
+        <a href="index.html" class="nav-link back-link"><span>Back</span></a>
+
+        <h1>Chat with AI</h1>
+        <p class="description">Ask me anything about Abdulkadir's work and expertise.</p>
+
+        <!-- Auth Required Message -->
+        <div id="auth-required" class="auth-required">
+            <p>Please sign in to chat with the AI assistant.</p>
+            <button id="chat-auth-button" class="auth-button" onclick="signInWithGoogle()">
+                Sign in with Google
+            </button>
+        </div>
+
+        <!-- Chat Container (shown when authenticated) -->
+        <div id="chat-container" class="chat-container" style="display: none;">
+            <div id="chat-messages" class="chat-messages">
+                <div class="message ai-message">
+                    <div class="message-content">
+                        Hello! I'm an AI assistant for Abdulkadir Khalifa Mustapha. I can tell you about his work in Healthcare AI, Productivity AI, and Media AI. What would you like to know?
+                    </div>
+                </div>
+            </div>
+
+            <form id="chat-form" class="chat-form">
+                <input
+                    type="text"
+                    id="chat-input"
+                    class="chat-input"
+                    placeholder="Type your message..."
+                    autocomplete="off"
+                    required
+                >
+                <button type="submit" id="send-button" class="send-button">Send</button>
+            </form>
+        </div>
+
+        <nav class="bottom-nav">
+            <a href="about.html" class="nav-link"><span>About</span></a>
+            <a href="work.html" class="nav-link"><span>Work</span></a>
+            <a href="contact.html" class="nav-link"><span>Contact</span></a>
+        </nav>
+    </main>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+    <script src="firebase-config.js"></script>
+    <script src="auth.js"></script>
+    <script src="chat.js"></script>
+</body>
+</html>

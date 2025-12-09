@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Auth Header -->
+    <header class="auth-header">
+        <div id="user-info" class="user-info"></div>
+        <button id="auth-button" class="auth-button">Sign in with Google</button>
+    </header>
+
     <main>
         <h1>Abdulkadir Khalifa Mustapha</h1>
         <p class="tagline">Prompt Engineer & Software Engineer</p>
@@ -16,10 +22,45 @@
         <nav>
             <a href="about.html" class="nav-link"><span>About</span></a>
             <a href="work.html" class="nav-link"><span>Work</span></a>
+            <a href="chat.html" class="nav-link"><span>AI Chat</span></a>
             <a href="https://www.linkedin.com/in/abdulkadir-mustapha-a33a9518a/" target="_blank" class="nav-link"><span>LinkedIn</span></a>
             <a href="contact.html" class="nav-link"><span>Contact</span></a>
         </nav>
+
+        <!-- Comments Section -->
+        <section class="comments-section">
+            <h2>Comments</h2>
+
+            <div id="comment-auth-prompt" class="comment-auth-prompt">
+                <p>Sign in to leave a comment</p>
+            </div>
+
+            <form id="comment-form" class="comment-form">
+                <textarea
+                    id="comment-input"
+                    class="comment-input"
+                    placeholder="Sign in to comment"
+                    rows="3"
+                    disabled
+                ></textarea>
+                <button type="submit" id="comment-submit" class="comment-submit" disabled>Post Comment</button>
+            </form>
+
+            <div id="comments-list" class="comments-list">
+                <p class="loading-comments">Loading comments...</p>
+            </div>
+        </section>
     </main>
-    <script src="script.js"></script>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+    <script src="firebase-config.js?v=2"></script>
+    <script src="auth.js?v=2"></script>
+    <script src="comments.js?v=2"></script>
+    <script src="script.js?v=2"></script>
+
 </body>
 </html>
